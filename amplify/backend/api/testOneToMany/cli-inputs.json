@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "testOneToMany",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/songju.pae/Desktop/test-amplify/amplify/backend/api/testOneToMany/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}
