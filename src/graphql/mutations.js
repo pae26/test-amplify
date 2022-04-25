@@ -91,9 +91,9 @@ export const createPost = /* GraphQL */ `
         items {
           id
           content
+          postId
           createdAt
           updatedAt
-          postCommentsId
         }
         nextToken
       }
@@ -124,9 +124,9 @@ export const updatePost = /* GraphQL */ `
         items {
           id
           content
+          postId
           createdAt
           updatedAt
-          postCommentsId
         }
         nextToken
       }
@@ -157,9 +157,9 @@ export const deletePost = /* GraphQL */ `
         items {
           id
           content
+          postId
           createdAt
           updatedAt
-          postCommentsId
         }
         nextToken
       }
@@ -193,9 +193,9 @@ export const createComment = /* GraphQL */ `
         blogPostsId
       }
       content
+      postId
       createdAt
       updatedAt
-      postCommentsId
     }
   }
 `;
@@ -223,9 +223,9 @@ export const updateComment = /* GraphQL */ `
         blogPostsId
       }
       content
+      postId
       createdAt
       updatedAt
-      postCommentsId
     }
   }
 `;
@@ -253,9 +253,9 @@ export const deleteComment = /* GraphQL */ `
         blogPostsId
       }
       content
+      postId
       createdAt
       updatedAt
-      postCommentsId
     }
   }
 `;

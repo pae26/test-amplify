@@ -12,11 +12,12 @@ type Post @model {
   id: ID!
   title: String!
   blog: Blog @belongsTo
-  comments: [Comment] @hasMany
+  comments: [Comment] @hasMany(fields: ["id"])
 }
 
 type Comment @model {
   id: ID!
-  post: Post @belongsTo
+  post: Post @belongsTo(fields: ["postId"])
   content: String!
+  postId: ID!
 }

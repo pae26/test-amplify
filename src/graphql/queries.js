@@ -59,9 +59,9 @@ export const getPost = /* GraphQL */ `
         items {
           id
           content
+          postId
           createdAt
           updatedAt
-          postCommentsId
         }
         nextToken
       }
@@ -119,9 +119,9 @@ export const getComment = /* GraphQL */ `
         blogPostsId
       }
       content
+      postId
       createdAt
       updatedAt
-      postCommentsId
     }
   }
 `;
@@ -142,9 +142,9 @@ export const listComments = /* GraphQL */ `
           blogPostsId
         }
         content
+        postId
         createdAt
         updatedAt
-        postCommentsId
       }
       nextToken
     }
