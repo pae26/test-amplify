@@ -1,9 +1,9 @@
 {
   "version": 1,
   "serviceConfiguration": {
-    "apiName": "testOneToMany",
+    "apiName": "zozospace",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/Users/songju.pae/Desktop/test-amplify/amplify/backend/api/testOneToMany/schema.graphql",
+    "gqlSchemaPath": "/Users/songju.pae/Desktop/test-amplify/amplify/backend/api/zozospace/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
       "expirationTime": 7

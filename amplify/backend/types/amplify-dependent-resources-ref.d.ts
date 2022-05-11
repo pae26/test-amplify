@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "api": {
-        "testOneToMany": {
+        "zozospace": {
             "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"

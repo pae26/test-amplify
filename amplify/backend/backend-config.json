@@ -1,6 +1,6 @@
 {
   "api": {
-    "testOneToMany": {
+    "zozospace": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

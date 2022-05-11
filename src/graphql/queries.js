@@ -1,98 +1,41 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getBlog = /* GraphQL */ `
-  query GetBlog($id: ID!) {
-    getBlog(id: $id) {
+export const getEvent = /* GraphQL */ `
+  query GetEvent($id: ID!) {
+    getEvent(id: $id) {
       id
       name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listBlogs = /* GraphQL */ `
-  query ListBlogs(
-    $filter: ModelBlogFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listBlogs(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getPost = /* GraphQL */ `
-  query GetPost($id: ID!) {
-    getPost(id: $id) {
-      id
-      title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
+      url
+      startTime
       comments {
-        items {
-          id
-          content
-          postId
-          createdAt
-          updatedAt
-        }
+        nextToken
+      }
+      ngcomments {
+        nextToken
+      }
+      stamps {
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
     }
   }
 `;
-export const listPosts = /* GraphQL */ `
-  query ListPosts(
-    $filter: ModelPostFilterInput
+export const listEvents = /* GraphQL */ `
+  query ListEvents(
+    $filter: ModelEventFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listEvents(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
+        name
+        url
+        startTime
         createdAt
         updatedAt
-        blogPostsId
       }
       nextToken
     }
@@ -102,24 +45,17 @@ export const getComment = /* GraphQL */ `
   query GetComment($id: ID!) {
     getComment(id: $id) {
       id
-      post {
+      userId
+      event {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
+        name
+        url
+        startTime
         createdAt
         updatedAt
-        blogPostsId
       }
+      eventId
       content
-      postId
       createdAt
       updatedAt
     }
@@ -134,15 +70,87 @@ export const listComments = /* GraphQL */ `
     listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        post {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
+        userId
+        eventId
         content
-        postId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getNGComment = /* GraphQL */ `
+  query GetNGComment($id: ID!) {
+    getNGComment(id: $id) {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listNGComments = /* GraphQL */ `
+  query ListNGComments(
+    $filter: ModelNGCommentFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listNGComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        userId
+        eventId
+        content
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getStamp = /* GraphQL */ `
+  query GetStamp($id: ID!) {
+    getStamp(id: $id) {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      name
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listStamps = /* GraphQL */ `
+  query ListStamps(
+    $filter: ModelStampFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listStamps(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        userId
+        eventId
+        name
         createdAt
         updatedAt
       }

@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-zozospace-dev-110540-authRole",
+      "UnauthRoleArn": "arn:aws:iam::199359972628:role/amplify-zozospace-dev-110540-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::199359972628:role/amplify-zozospace-dev-110540-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-zozospace-dev-110540-deployment",
+      "UnauthRoleName": "amplify-zozospace-dev-110540-unauthRole",
+      "StackName": "amplify-zozospace-dev-110540",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:199359972628:stack/amplify-zozospace-dev-110540/35c86490-c43c-11ec-ac6c-0a9a73c4dc63",
+      "AmplifyAppId": "d1ep7sj1u2pk00"
+    }
+  }
+}

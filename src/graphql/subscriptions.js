@@ -1,19 +1,20 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateBlog = /* GraphQL */ `
-  subscription OnCreateBlog {
-    onCreateBlog {
+export const onCreateEvent = /* GraphQL */ `
+  subscription OnCreateEvent {
+    onCreateEvent {
       id
       name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
+      url
+      startTime
+      comments {
+        nextToken
+      }
+      ngcomments {
+        nextToken
+      }
+      stamps {
         nextToken
       }
       createdAt
@@ -21,19 +22,20 @@ export const onCreateBlog = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateBlog = /* GraphQL */ `
-  subscription OnUpdateBlog {
-    onUpdateBlog {
+export const onUpdateEvent = /* GraphQL */ `
+  subscription OnUpdateEvent {
+    onUpdateEvent {
       id
       name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
+      url
+      startTime
+      comments {
+        nextToken
+      }
+      ngcomments {
+        nextToken
+      }
+      stamps {
         nextToken
       }
       createdAt
@@ -41,113 +43,24 @@ export const onUpdateBlog = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteBlog = /* GraphQL */ `
-  subscription OnDeleteBlog {
-    onDeleteBlog {
+export const onDeleteEvent = /* GraphQL */ `
+  subscription OnDeleteEvent {
+    onDeleteEvent {
       id
       name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreatePost = /* GraphQL */ `
-  subscription OnCreatePost {
-    onCreatePost {
-      id
-      title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
+      url
+      startTime
       comments {
-        items {
-          id
-          content
-          postId
-          createdAt
-          updatedAt
-        }
+        nextToken
+      }
+      ngcomments {
+        nextToken
+      }
+      stamps {
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
-    }
-  }
-`;
-export const onUpdatePost = /* GraphQL */ `
-  subscription OnUpdatePost {
-    onUpdatePost {
-      id
-      title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      comments {
-        items {
-          id
-          content
-          postId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-      blogPostsId
-    }
-  }
-`;
-export const onDeletePost = /* GraphQL */ `
-  subscription OnDeletePost {
-    onDeletePost {
-      id
-      title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      comments {
-        items {
-          id
-          content
-          postId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-      blogPostsId
     }
   }
 `;
@@ -155,24 +68,17 @@ export const onCreateComment = /* GraphQL */ `
   subscription OnCreateComment {
     onCreateComment {
       id
-      post {
+      userId
+      event {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
+        name
+        url
+        startTime
         createdAt
         updatedAt
-        blogPostsId
       }
+      eventId
       content
-      postId
       createdAt
       updatedAt
     }
@@ -182,24 +88,17 @@ export const onUpdateComment = /* GraphQL */ `
   subscription OnUpdateComment {
     onUpdateComment {
       id
-      post {
+      userId
+      event {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
+        name
+        url
+        startTime
         createdAt
         updatedAt
-        blogPostsId
       }
+      eventId
       content
-      postId
       createdAt
       updatedAt
     }
@@ -209,24 +108,137 @@ export const onDeleteComment = /* GraphQL */ `
   subscription OnDeleteComment {
     onDeleteComment {
       id
-      post {
+      userId
+      event {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
+        name
+        url
+        startTime
         createdAt
         updatedAt
-        blogPostsId
       }
+      eventId
       content
-      postId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateNGComment = /* GraphQL */ `
+  subscription OnCreateNGComment {
+    onCreateNGComment {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateNGComment = /* GraphQL */ `
+  subscription OnUpdateNGComment {
+    onUpdateNGComment {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteNGComment = /* GraphQL */ `
+  subscription OnDeleteNGComment {
+    onDeleteNGComment {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateStamp = /* GraphQL */ `
+  subscription OnCreateStamp {
+    onCreateStamp {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      name
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateStamp = /* GraphQL */ `
+  subscription OnUpdateStamp {
+    onUpdateStamp {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      name
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteStamp = /* GraphQL */ `
+  subscription OnDeleteStamp {
+    onDeleteStamp {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      name
       createdAt
       updatedAt
     }

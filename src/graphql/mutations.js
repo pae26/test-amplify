@@ -1,22 +1,23 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createBlog = /* GraphQL */ `
-  mutation CreateBlog(
-    $input: CreateBlogInput!
-    $condition: ModelBlogConditionInput
+export const createEvent = /* GraphQL */ `
+  mutation CreateEvent(
+    $input: CreateEventInput!
+    $condition: ModelEventConditionInput
   ) {
-    createBlog(input: $input, condition: $condition) {
+    createEvent(input: $input, condition: $condition) {
       id
       name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
+      url
+      startTime
+      comments {
+        nextToken
+      }
+      ngcomments {
+        nextToken
+      }
+      stamps {
         nextToken
       }
       createdAt
@@ -24,22 +25,23 @@ export const createBlog = /* GraphQL */ `
     }
   }
 `;
-export const updateBlog = /* GraphQL */ `
-  mutation UpdateBlog(
-    $input: UpdateBlogInput!
-    $condition: ModelBlogConditionInput
+export const updateEvent = /* GraphQL */ `
+  mutation UpdateEvent(
+    $input: UpdateEventInput!
+    $condition: ModelEventConditionInput
   ) {
-    updateBlog(input: $input, condition: $condition) {
+    updateEvent(input: $input, condition: $condition) {
       id
       name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
+      url
+      startTime
+      comments {
+        nextToken
+      }
+      ngcomments {
+        nextToken
+      }
+      stamps {
         nextToken
       }
       createdAt
@@ -47,125 +49,27 @@ export const updateBlog = /* GraphQL */ `
     }
   }
 `;
-export const deleteBlog = /* GraphQL */ `
-  mutation DeleteBlog(
-    $input: DeleteBlogInput!
-    $condition: ModelBlogConditionInput
+export const deleteEvent = /* GraphQL */ `
+  mutation DeleteEvent(
+    $input: DeleteEventInput!
+    $condition: ModelEventConditionInput
   ) {
-    deleteBlog(input: $input, condition: $condition) {
+    deleteEvent(input: $input, condition: $condition) {
       id
       name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createPost = /* GraphQL */ `
-  mutation CreatePost(
-    $input: CreatePostInput!
-    $condition: ModelPostConditionInput
-  ) {
-    createPost(input: $input, condition: $condition) {
-      id
-      title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
+      url
+      startTime
       comments {
-        items {
-          id
-          content
-          postId
-          createdAt
-          updatedAt
-        }
+        nextToken
+      }
+      ngcomments {
+        nextToken
+      }
+      stamps {
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
-    }
-  }
-`;
-export const updatePost = /* GraphQL */ `
-  mutation UpdatePost(
-    $input: UpdatePostInput!
-    $condition: ModelPostConditionInput
-  ) {
-    updatePost(input: $input, condition: $condition) {
-      id
-      title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      comments {
-        items {
-          id
-          content
-          postId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-      blogPostsId
-    }
-  }
-`;
-export const deletePost = /* GraphQL */ `
-  mutation DeletePost(
-    $input: DeletePostInput!
-    $condition: ModelPostConditionInput
-  ) {
-    deletePost(input: $input, condition: $condition) {
-      id
-      title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      comments {
-        items {
-          id
-          content
-          postId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-      blogPostsId
     }
   }
 `;
@@ -176,24 +80,17 @@ export const createComment = /* GraphQL */ `
   ) {
     createComment(input: $input, condition: $condition) {
       id
-      post {
+      userId
+      event {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
+        name
+        url
+        startTime
         createdAt
         updatedAt
-        blogPostsId
       }
+      eventId
       content
-      postId
       createdAt
       updatedAt
     }
@@ -206,24 +103,17 @@ export const updateComment = /* GraphQL */ `
   ) {
     updateComment(input: $input, condition: $condition) {
       id
-      post {
+      userId
+      event {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
+        name
+        url
+        startTime
         createdAt
         updatedAt
-        blogPostsId
       }
+      eventId
       content
-      postId
       createdAt
       updatedAt
     }
@@ -236,24 +126,155 @@ export const deleteComment = /* GraphQL */ `
   ) {
     deleteComment(input: $input, condition: $condition) {
       id
-      post {
+      userId
+      event {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
+        name
+        url
+        startTime
         createdAt
         updatedAt
-        blogPostsId
       }
+      eventId
       content
-      postId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createNGComment = /* GraphQL */ `
+  mutation CreateNGComment(
+    $input: CreateNGCommentInput!
+    $condition: ModelNGCommentConditionInput
+  ) {
+    createNGComment(input: $input, condition: $condition) {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateNGComment = /* GraphQL */ `
+  mutation UpdateNGComment(
+    $input: UpdateNGCommentInput!
+    $condition: ModelNGCommentConditionInput
+  ) {
+    updateNGComment(input: $input, condition: $condition) {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteNGComment = /* GraphQL */ `
+  mutation DeleteNGComment(
+    $input: DeleteNGCommentInput!
+    $condition: ModelNGCommentConditionInput
+  ) {
+    deleteNGComment(input: $input, condition: $condition) {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createStamp = /* GraphQL */ `
+  mutation CreateStamp(
+    $input: CreateStampInput!
+    $condition: ModelStampConditionInput
+  ) {
+    createStamp(input: $input, condition: $condition) {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      name
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateStamp = /* GraphQL */ `
+  mutation UpdateStamp(
+    $input: UpdateStampInput!
+    $condition: ModelStampConditionInput
+  ) {
+    updateStamp(input: $input, condition: $condition) {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      name
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteStamp = /* GraphQL */ `
+  mutation DeleteStamp(
+    $input: DeleteStampInput!
+    $condition: ModelStampConditionInput
+  ) {
+    deleteStamp(input: $input, condition: $condition) {
+      id
+      userId
+      event {
+        id
+        name
+        url
+        startTime
+        createdAt
+        updatedAt
+      }
+      eventId
+      name
       createdAt
       updatedAt
     }
